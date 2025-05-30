@@ -9,9 +9,4 @@ black = "*"
 python-dotenv = "*"
 langchain-openai = "*"
 langchain-core = "*"
-
-[dev-packages]
-
-[requires]
-python_version = "3.12"
-python_full_version = "3.12.6"
+langcha
