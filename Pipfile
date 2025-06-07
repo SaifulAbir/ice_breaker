@@ -12,6 +12,7 @@ langchain-core = "*"
 langchain-ollama = "*"
 langchain-google-vertexai = "*"
 langchain-community = "*"
+flask = "*"
 
 [dev-packages]
 
