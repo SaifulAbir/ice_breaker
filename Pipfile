@@ -11,6 +11,7 @@ langchain-openai = "*"
 langchain-core = "*"
 langchain-ollama = "*"
 langchain-google-vertexai = "*"
+langchain-community = "*"
 
 [dev-packages]
 
