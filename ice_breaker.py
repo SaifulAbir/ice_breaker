@@ -1,8 +1,10 @@
 from dotenv import load_dotenv
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.prompts import PromptTemplate
-from langchain_openai import ChatOpenAI
-from langchain_ollama import ChatOllama
+from langchain_google_genai import ChatGoogleGenerativeAI
+# from langchain_anthropic import ChatAnthropic
+# from langchain_openai import ChatOpenAI
+# from langchain_ollama import ChatOllama
 
 information = """
 Elon Reeve Musk (/ˈiːlɒn/ EE-lon; born June 28, 1971) is a businessman known for his leadership of Tesla, SpaceX, and X (formerly Twitter). In early 2025, he served as senior advisor to United States president Donald Trump and as the de facto head of the Department of Government Efficiency (DOGE). Musk has been considered the wealthiest person in the world since 2021; as of May 2025, Forbes estimates his net worth to be US$424.7 billion. He was named Time magazine's Person of the Year in 2021.
@@ -28,7 +30,18 @@ if __name__ == "__main__":
 
     # llm = ChatOpenAI(temperature=0, model_name="gpt-3.5-turbo")
 
-    llm = ChatOllama(model="mistral")
+    # llm = ChatOllama(model="mistral")
+
+    llm = ChatGoogleGenerativeAI(
+        model="gemini-2.0-flash",  # Free tier available
+        temperature=0
+    )
+
+    # Claude 3.5 Haiku
+    # llm = ChatAnthropic(
+    #     model="claude-3-5-haiku-20241022",
+    #     temperature=0
+    # )
 
     chain = summary_prompt_template | llm | StrOutputParser()
 
